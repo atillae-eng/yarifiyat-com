@@ -1,4 +1,4 @@
-import './globals.css'
+﻿import './globals.css'
 import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -6,8 +6,8 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'YARÄ°FÄ°YAT.COM â€” SeÃ§ilmiÅŸ En Ä°yi Teklifler',
-  description: 'Her sektÃ¶rde en iyi kampanyayÄ± seÃ§eriz. Karar yorgunluÄŸuna son!',
+  title: 'YARİFİYAT.COM — Seçilmiş En İyi Teklifler',
+  description: 'Her sektörde en iyi kampanyayı seçeriz. Karar yorgunluğuna son!',
 }
 
 export default function RootLayout({
@@ -17,6 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body className={inter.className}>
         <Header />
         <main className="min-h-screen">{children}</main>
