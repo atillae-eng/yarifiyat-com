@@ -12,7 +12,7 @@ export default async function HomePage() {
     .limit(10)
 
   if (error) {
-    console.error('Veri çekme hatası:', error)
+    console.error('Veri Ã§ekme hatasÄ±:', error)
   }
 
   return (
@@ -21,8 +21,8 @@ export default async function HomePage() {
       <CategoryFilter />
       <section className="mt-12">
         <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-          ?? BUGÜNÜN EN GÜÇLÜ TEKLİFLERİ
-          <span className="text-sm font-normal text-gray-500">TKS™ ile sıralandı</span>
+          ?? BUGÃœNÃœN EN GÃœÃ‡LÃœ TEKLÄ°FLERÄ°
+          <span className="text-sm font-normal text-gray-500">TKSâ„¢ ile sÄ±ralandÄ±</span>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {campaigns?.map((campaign) => (
@@ -34,7 +34,7 @@ export default async function HomePage() {
         <section className="mt-16 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8 border-2 border-yellow-400">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-3xl">??</span>
-            <h3 className="text-xl font-bold text-orange-600">ŞAMPİYON KAMPANYA</h3>
+            <h3 className="text-xl font-bold text-orange-600">ÅAMPÄ°YON KAMPANYA</h3>
           </div>
           <CampaignCard campaign={campaigns[0]} featured />
         </section>

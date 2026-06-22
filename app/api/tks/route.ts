@@ -8,7 +8,7 @@ export async function POST(request: Request) {
 
     if (discount === undefined || benefit === undefined) {
       return NextResponse.json(
-        { error: '�ndirim ve Fayda alanlar� zorunludur.' },
+        { error: 'Ä°ndirim ve Fayda alanlarÄ± zorunludur.' },
         { status: 400 }
       )
     }
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     return NextResponse.json(
-      { error: 'Sunucu hatas� olu�tu.' },
+      { error: 'Sunucu hatasÄ± oluÅŸtu.' },
       { status: 500 }
     )
   }
