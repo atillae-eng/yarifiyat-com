@@ -48,7 +48,7 @@ export default function CampaignCard({ campaign, featured = false }: CampaignCar
         rel="noopener noreferrer"
         className="mt-4 block w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-xl text-center transition-colors"
       >
-        FIRSATI YAKALA ›
+        FIRSATI YAKALA â€º
       </Link>
     </div>
   )

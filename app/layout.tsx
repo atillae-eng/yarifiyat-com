@@ -6,8 +6,8 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'YARİFİYAT.COM — Seçilmiş En İyi Teklifler',
-  description: 'Her sektörde en iyi kampanyayı seçeriz. Karar yorgunluğuna son!',
+  title: 'YARÄ°FÄ°YAT.COM â€” SeÃ§ilmiÅŸ En Ä°yi Teklifler',
+  description: 'Her sektÃ¶rde en iyi kampanyayÄ± seÃ§eriz. Karar yorgunluÄŸuna son!',
 }
 
 export default function RootLayout({

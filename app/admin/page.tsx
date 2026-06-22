@@ -33,9 +33,9 @@ export default function AdminPage() {
     })
 
     if (error) {
-      alert('Kayıt başarısız: ' + error.message)
+      alert('KayÄ±t baÅŸarÄ±sÄ±z: ' + error.message)
     } else {
-      alert('Kampanya başarıyla eklendi!')
+      alert('Kampanya baÅŸarÄ±yla eklendi!')
       setForm({ brand_name: '', discount: 0, category: '', description: '', affiliate_url: '', is_active: true })
     }
   }
@@ -45,7 +45,7 @@ export default function AdminPage() {
       <h1 className="text-2xl font-bold mb-6">Yeni Kampanya Ekle</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block font-medium mb-1">Marka Adı</label>
+          <label className="block font-medium mb-1">Marka AdÄ±</label>
           <input
             type="text"
             className="w-full border rounded-xl px-4 py-2"
@@ -55,7 +55,7 @@ export default function AdminPage() {
           />
         </div>
         <div>
-          <label className="block font-medium mb-1">İndirim (%)</label>
+          <label className="block font-medium mb-1">Ä°ndirim (%)</label>
           <input
             type="number"
             className="w-full border rounded-xl px-4 py-2"
@@ -77,7 +77,7 @@ export default function AdminPage() {
           />
         </div>
         <div>
-          <label className="block font-medium mb-1">Açıklama</label>
+          <label className="block font-medium mb-1">AÃ§Ä±klama</label>
           <textarea
             className="w-full border rounded-xl px-4 py-2"
             rows={3}
@@ -98,7 +98,7 @@ export default function AdminPage() {
           type="submit"
           className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors"
         >
-          Kampanyayı Yayınla
+          KampanyayÄ± YayÄ±nla
         </button>
       </form>
     </div>
