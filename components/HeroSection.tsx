@@ -1,18 +1,33 @@
-export default function HeroSection() {
+﻿import CampaignCard from './CampaignCard'
+
+export default function HeroSection({ campaign }: { campaign: any }) {
   return (
-    <section className="text-center py-12 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl">
-      <h1 className="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight">
-        BUGÃœNÃœN EN GÃœÃ‡LÃœ <br />
-        <span className="text-orange-500">TEKLÄ°FÄ°</span>
-      </h1>
-      <p className="text-lg text-gray-600 mt-4 max-w-xl mx-auto">
-        YalnÄ±zca bir marka. SektÃ¶rÃ¼n en iyi fÄ±rsatÄ±.
-      </p>
-      <div className="mt-6 flex justify-center gap-3 flex-wrap">
-        <span className="bg-red-600 text-white px-4 py-2 rounded-full font-bold">-50%</span>
-        <span className="bg-blue-600 text-white px-4 py-2 rounded-full font-bold">-30%</span>
-        <span className="bg-green-600 text-white px-4 py-2 rounded-full font-bold">-20%</span>
-        <span className="bg-purple-600 text-white px-4 py-2 rounded-full font-bold">-40%</span>
+    <section className="mb-12 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-6 md:p-10 border-2 border-orange-300">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <span className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-1 rounded-full mb-2">
+            ⚡ BUGÜNÜN EN GÜÇLÜ TEKLİFİ
+          </span>
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-800">{campaign.brand_name}</h2>
+          <p className="text-gray-600 mt-1">{campaign.description}</p>
+          <div className="mt-3 flex items-center gap-4 flex-wrap">
+            <span className="bg-red-600 text-white text-3xl font-bold px-6 py-2 rounded-2xl">
+              %{campaign.discount} İNDİRİM
+            </span>
+            <span className="text-sm text-gray-500">12 Ay Sınırsız Erişim</span>
+          </div>
+          <a href={campaign.affiliate_url} target="_blank" rel="noopener" 
+             className="mt-4 inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-2xl transition">
+            HEMEN YAKALA →
+          </a>
+        </div>
+        <div className="flex gap-2 flex-wrap">
+          <span className="bg-white px-4 py-2 rounded-full shadow text-sm font-bold text-gray-700">-30%</span>
+          <span className="bg-white px-4 py-2 rounded-full shadow text-sm font-bold text-gray-700">-20%</span>
+          <span className="bg-white px-4 py-2 rounded-full shadow text-sm font-bold text-gray-700">-40%</span>
+          <span className="bg-white px-4 py-2 rounded-full shadow text-sm font-bold text-gray-700">-10%</span>
+          <span className="bg-white px-4 py-2 rounded-full shadow text-sm font-bold text-gray-700">-50%</span>
+        </div>
       </div>
     </section>
   )

@@ -1,11 +1,11 @@
-export interface CampaignData {
+﻿export interface TKSParams {
   discount: number
   benefit: number
   contribution: number
   trust: number
 }
 
-export function calculateTKS(data: CampaignData): number {
+export function calculateTKS(params: TKSParams): number {
   const weights = {
     discount: 0.35,
     benefit: 0.25,
@@ -14,10 +14,10 @@ export function calculateTKS(data: CampaignData): number {
   }
 
   const score =
-    data.discount * weights.discount +
-    data.benefit * weights.benefit +
-    data.contribution * weights.contribution +
-    data.trust * weights.trust
+    params.discount * weights.discount +
+    params.benefit * weights.benefit +
+    params.contribution * weights.contribution +
+    params.trust * weights.trust
 
   return Math.round(score * 10) / 10
 }

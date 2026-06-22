@@ -1,64 +1,39 @@
 ﻿import HeroSection from '@/components/HeroSection'
-import CampaignCard from '@/components/CampaignCard'
+import CategorySection from '@/components/CategorySection'
+import BulkDealSection from '@/components/BulkDealSection'
+import ChampionsLeague from '@/components/ChampionsLeague'
+import Personalization from '@/components/Personalization'
 import CategoryFilter from '@/components/CategoryFilter'
-
-const demoCampaigns = [
-  {
-    id: 1,
-    brand_name: 'Adobe Creative Cloud',
-    discount: 50,
-    category: 'Teknoloji',
-    description: '12 Ay Boyunca Sınırsız Erişim',
-    tks_score: 92.5,
-    affiliate_url: '#',
-    logo_url: '',
-  },
-  {
-    id: 2,
-    brand_name: 'B&O Lüks Ses Ürünleri',
-    discount: 45,
-    category: 'Ses Sistemleri',
-    description: 'Sınırlı sayıda süper fırsat',
-    tks_score: 88.0,
-    affiliate_url: '#',
-    logo_url: '',
-  },
-  {
-    id: 3,
-    brand_name: 'Süper Lüks Oteller',
-    discount: 30,
-    category: 'Tatil',
-    description: 'Seçkin otellerde özel indirim',
-    tks_score: 85.0,
-    affiliate_url: '#',
-    logo_url: '',
-  },
-]
+import { demoCampaigns } from '@/lib/campaignsData'
+import { calculateTKS } from '@/lib/tksAlgorithm'
 
 export default function HomePage() {
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <HeroSection />
-      <CategoryFilter />
-      
-      <section className="mt-12">
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-          🏆 BUGÜNÜN EN GÜÇLÜ TEKLİFLERİ
-          <span className="text-sm font-normal text-gray-500">TKS™ ile sıralandı</span>
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {demoCampaigns.map((campaign) => (
-            <CampaignCard key={campaign.id} campaign={campaign} />
-          ))}
-        </div>
-      </section>
+  const campaigns = demoCampaigns.map(c => ({
+    ...c,
+    tks_score: calculateTKS({
+      discount: c.discount,
+      benefit: 80 + Math.random() * 20,
+      contribution: 70 + Math.random() * 30,
+      trust: 75 + Math.random() * 25,
+    })
+  }))
 
-      <section className="mt-16 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8 border-2 border-yellow-400">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-3xl">👑</span>
-          <h3 className="text-xl font-bold text-orange-600">ŞAMPİYON KAMPANYA</h3>
-        </div>
-        <CampaignCard campaign={demoCampaigns[0]} featured />
+  const topOffer = campaigns.reduce((a, b) => a.tks_score > b.tks_score ? a : b)
+  const categories = [...new Set(campaigns.map(c => c.category))]
+  const champions = [...campaigns].sort((a, b) => b.tks_score - a.tks_score).slice(0, 6)
+  const bulkDeals = campaigns.filter(c => c.bulk_deal)
+
+  return (
+    <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <HeroSection campaign={topOffer} />
+      <CategoryFilter categories={categories} />
+      <CategorySection campaigns={campaigns} categories={categories} />
+      <BulkDealSection campaigns={bulkDeals} />
+      <ChampionsLeague campaigns={champions} />
+      <Personalization campaigns={campaigns} />
+      <section className="mt-12 text-center text-gray-400 text-sm border-t pt-8">
+        <p>© 2026 YARİFİYAT.COM — Seçilmiş En İyi Teklifler</p>
+        <p className="mt-1">Her sektörde yalnızca 1 marka. Karar yorgunluğuna son!</p>
       </section>
     </div>
   )
