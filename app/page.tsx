@@ -1,44 +1,8 @@
-import HeroSection from '@/components/HeroSection'
-import CampaignCard from '@/components/CampaignCard'
-import CategoryFilter from '@/components/CategoryFilter'
-import { supabase } from '@/lib/supabaseClient'
-
-export default async function HomePage() {
-  const { data: campaigns, error } = await supabase
-    .from('campaigns')
-    .select('*')
-    .eq('is_active', true)
-    .order('tks_score', { ascending: false })
-    .limit(10)
-
-  if (error) {
-    console.error('Veri Ã§ekme hatasÄ±:', error)
-  }
-
+﻿export default function HomePage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <HeroSection />
-      <CategoryFilter />
-      <section className="mt-12">
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-          ?? BUGÃœNÃœN EN GÃœÃ‡LÃœ TEKLÄ°FLERÄ°
-          <span className="text-sm font-normal text-gray-500">TKSâ„¢ ile sÄ±ralandÄ±</span>
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {campaigns?.map((campaign) => (
-            <CampaignCard key={campaign.id} campaign={campaign} />
-          ))}
-        </div>
-      </section>
-      {campaigns && campaigns.length > 0 && (
-        <section className="mt-16 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-8 border-2 border-yellow-400">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-3xl">??</span>
-            <h3 className="text-xl font-bold text-orange-600">ÅAMPÄ°YON KAMPANYA</h3>
-          </div>
-          <CampaignCard campaign={campaigns[0]} featured />
-        </section>
-      )}
+      <h1 className="text-4xl font-bold text-center">YARİFİYAT.COM</h1>
+      <p className="text-center text-gray-600 mt-4">Şu an bakım modunda, yakında yayında!</p>
     </div>
   )
 }
