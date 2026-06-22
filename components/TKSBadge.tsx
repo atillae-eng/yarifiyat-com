@@ -1,4 +1,4 @@
-﻿interface TKSBadgeProps {
+interface TKSBadgeProps {
   score: number
 }
 

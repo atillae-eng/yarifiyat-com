@@ -1,4 +1,4 @@
-ï»¿import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { calculateTKS } from '@/lib/tksAlgorithm'
 
 export async function POST(request: Request) {
@@ -8,7 +8,7 @@ export async function POST(request: Request) {
 
     if (discount === undefined || benefit === undefined) {
       return NextResponse.json(
-        { error: 'Ä°ndirim ve Fayda alanlarÄ± zorunludur.' },
+        { error: 'Ýndirim ve Fayda alanlarý zorunludur.' },
         { status: 400 }
       )
     }
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     return NextResponse.json(
-      { error: 'Sunucu hatasÄ± oluÅŸtu.' },
+      { error: 'Sunucu hatasý oluþtu.' },
       { status: 500 }
     )
   }

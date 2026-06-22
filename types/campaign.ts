@@ -1,4 +1,4 @@
-﻿export interface Campaign {
+export interface Campaign {
   id: number
   brand_name: string
   logo_url?: string

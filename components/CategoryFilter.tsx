@@ -1,5 +1,5 @@
-ï»¿export default function CategoryFilter() {
-  const categories = ['TÃ¼mÃ¼', 'Seyahat', 'Teknoloji', 'SaÄŸlÄ±k', 'Giyim', 'SÃ¼permarket', 'EÄŸitim']
+export default function CategoryFilter() {
+  const categories = ['Tümü', 'Seyahat', 'Teknoloji', 'Sağlık', 'Giyim', 'Süpermarket', 'Eğitim']
 
   return (
     <div className="flex flex-wrap gap-2 my-6 justify-center">

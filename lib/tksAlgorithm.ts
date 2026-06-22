@@ -1,4 +1,4 @@
-﻿export interface CampaignData {
+export interface CampaignData {
   discount: number
   benefit: number
   contribution: number
