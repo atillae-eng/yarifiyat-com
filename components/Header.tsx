@@ -6,7 +6,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center max-w-7xl">
         <Link href="/" className="flex items-center gap-3 group">
           <img
-            src="/images/yarifiyat-logo.svg"
+            src="/images/yarifiyat-logo.png"
             alt="YARİFİYAT"
             width="50"
             height="50"
