@@ -1,6 +1,8 @@
+﻿import CampaignCard from './CampaignCard'
+
 export default function HeroSection({ campaign }: { campaign: any }) {
   return (
-    <section className="mb-12 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-6 md:p-10 border-2 border-orange-300 shadow-sm">
+    <section className="mb-12 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-6 md:p-10 border-2 border-orange-300">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <span className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-1 rounded-full mb-2">
@@ -15,11 +17,11 @@ export default function HeroSection({ campaign }: { campaign: any }) {
             <span className="text-sm text-gray-500">12 Ay Sınırsız Erişim</span>
           </div>
           <a href={campaign.affiliate_url} target="_blank" rel="noopener" 
-             className="mt-4 inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-2xl transition shadow-md hover:shadow-lg">
+             className="mt-4 inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-2xl transition">
             HEMEN YAKALA →
           </a>
         </div>
-        <div className="flex gap-2 flex-wrap justify-center">
+        <div className="flex gap-2 flex-wrap">
           <span className="bg-white px-4 py-2 rounded-full shadow text-sm font-bold text-gray-700">-30%</span>
           <span className="bg-white px-4 py-2 rounded-full shadow text-sm font-bold text-gray-700">-20%</span>
           <span className="bg-white px-4 py-2 rounded-full shadow text-sm font-bold text-gray-700">-40%</span>

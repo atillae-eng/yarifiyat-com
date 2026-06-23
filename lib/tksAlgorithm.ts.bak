@@ -1,4 +1,4 @@
-export interface TKSParams {
+﻿export interface TKSParams {
   discount: number
   benefit: number
   contribution: number
