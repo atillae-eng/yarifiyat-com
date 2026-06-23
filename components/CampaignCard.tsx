@@ -6,7 +6,6 @@ export default function CampaignCard({ campaign, featured = false }: { campaign:
     ? 'bg-white rounded-2xl shadow-lg border-2 border-yellow-400 p-4 hover:shadow-xl transition'
     : 'bg-white rounded-2xl shadow-md border border-gray-100 p-4 hover:shadow-lg transition'
 
-  // Logo dosya adını brand_name'den türet
   const logoMap: Record<string, string> = {
     'Adobe Creative Cloud': 'adobe-logo',
     'B&O Lüks Ses Ürünleri': 'bo-logo',
@@ -30,13 +29,7 @@ export default function CampaignCard({ campaign, featured = false }: { campaign:
         )}
       </div>
       <div className="my-3 flex justify-center">
-        <Image
-          src={`/images/${logoFile}.svg`}
-          alt={campaign.brand_name}
-          width={120}
-          height={60}
-          className="object-contain"
-        />
+        <Image src={`/images/${logoFile}.svg`} alt={campaign.brand_name} width={120} height={60} className="object-contain" />
       </div>
       <p className="text-sm text-gray-600 text-center line-clamp-2">{campaign.description}</p>
       <span className="block text-xs text-gray-400 text-center mt-1">{campaign.category}</span>

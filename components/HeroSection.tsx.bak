@@ -9,14 +9,14 @@ export default function HeroSection({ campaign }: { campaign: any }) {
 
   return (
     <section className="mb-12 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl p-6 md:p-10 border-2 border-orange-300 shadow-sm relative overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
         <div className="flex-1">
           <span className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-1 rounded-full mb-2">
             ⚡ BUGÜNÜN EN GÜÇLÜ TEKLİFİ
           </span>
           <h2 className="text-2xl md:text-4xl font-bold text-gray-800">{campaign.brand_name}</h2>
           <p className="text-gray-600 mt-1">{campaign.description}</p>
-          <div className="mt-3 flex items-center gap-4 flex-wrap">
+          <div className="mt-3 flex items-center gap-4 flex-wrap justify-center md:justify-start">
             <span className="bg-red-600 text-white text-3xl font-bold px-6 py-2 rounded-2xl">
               %{campaign.discount} İNDİRİM
             </span>
@@ -28,7 +28,6 @@ export default function HeroSection({ campaign }: { campaign: any }) {
           </a>
         </div>
         
-        {/* Yelpaze İndirimler */}
         <div className="relative flex items-center justify-center w-48 h-48 md:w-64 md:h-64">
           {discounts.map((item, idx) => (
             <div

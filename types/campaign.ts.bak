@@ -9,6 +9,6 @@ export interface Campaign {
   affiliate_url: string
   is_active: boolean
   featured: boolean
-  bulk_deal?: boolean
-  bulk_threshold?: number
+  created_at: string
+  updated_at: string
 }

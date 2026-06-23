@@ -1,9 +1,21 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function CampaignCard({ campaign, featured = false }: { campaign: any, featured?: boolean }) {
   const cardClasses = featured
     ? 'bg-white rounded-2xl shadow-lg border-2 border-yellow-400 p-4 hover:shadow-xl transition'
     : 'bg-white rounded-2xl shadow-md border border-gray-100 p-4 hover:shadow-lg transition'
+
+  // Logo dosya adını brand_name'den türet
+  const logoMap: Record<string, string> = {
+    'Adobe Creative Cloud': 'adobe-logo',
+    'B&O Lüks Ses Ürünleri': 'bo-logo',
+    'Süper Lüks Oteller': 'tatil-logo',
+    'Acıbadem Sağlık Grubu': 'acibadem-logo',
+    'Trendyol': 'trendyol-logo',
+    'CarrefourSA': 'carrefour-logo',
+  }
+  const logoFile = logoMap[campaign.brand_name] || 'adobe-logo'
 
   return (
     <div className={cardClasses}>
@@ -18,7 +30,13 @@ export default function CampaignCard({ campaign, featured = false }: { campaign:
         )}
       </div>
       <div className="my-3 flex justify-center">
-        <span className="text-lg font-bold text-gray-700">{campaign.brand_name}</span>
+        <Image
+          src={`/images/${logoFile}.svg`}
+          alt={campaign.brand_name}
+          width={120}
+          height={60}
+          className="object-contain"
+        />
       </div>
       <p className="text-sm text-gray-600 text-center line-clamp-2">{campaign.description}</p>
       <span className="block text-xs text-gray-400 text-center mt-1">{campaign.category}</span>
