@@ -1,12 +1,13 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 
 export default function Header() {
+  const logoBase64 = "'" + $logoBase64 + "'"
   return (
     <header className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center max-w-7xl">
         <Link href="/" className="flex items-center gap-3 group">
           <img
-            src="/images/yarifiyat-logo.png"
+            src={logoBase64}
             alt="YARİFİYAT"
             width="50"
             height="50"
