@@ -1,4 +1,4 @@
-﻿import CampaignCard from './CampaignCard'
+import CampaignCard from './CampaignCard'
 
 export default function ChampionsLeague({ campaigns }: { campaigns: any[] }) {
   return (
@@ -11,7 +11,7 @@ export default function ChampionsLeague({ campaigns }: { campaigns: any[] }) {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         {campaigns.map((campaign, idx) => (
           <div key={campaign.id} className="relative">
-            {idx === 0 && <div className="absolute -top-2 -left-2 text-2xl">👑</div>}
+            {idx === 0 && <div className="absolute -top-3 -left-2 text-3xl">👑</div>}
             <CampaignCard campaign={campaign} />
           </div>
         ))}

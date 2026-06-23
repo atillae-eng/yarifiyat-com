@@ -7,10 +7,14 @@ export default function Header() {
         <Link href="/" className="text-2xl font-bold text-orange-500">
           YARİFİYAT<span className="text-gray-700">.COM</span>
         </Link>
-        <nav className="flex gap-4 text-sm items-center">
-          <Link href="/" className="hover:text-orange-500">Ana Sayfa</Link>
+        <nav className="hidden md:flex gap-6 text-sm items-center">
+          <Link href="/" className="hover:text-orange-500 font-medium">Ana Sayfa</Link>
+          <Link href="/nasil-calisir" className="hover:text-orange-500">Nasıl Çalışır?</Link>
+          <Link href="/sss" className="hover:text-orange-500">Sık Sorulanlar</Link>
+          <Link href="/firsat-gonder" className="bg-orange-500 text-white px-4 py-2 rounded-xl hover:bg-orange-600 transition shadow">Fırsat Gönder</Link>
           <Link href="/admin" className="hover:text-orange-500">Admin</Link>
         </nav>
+        <button className="md:hidden text-2xl">☰</button>
       </div>
     </header>
   )

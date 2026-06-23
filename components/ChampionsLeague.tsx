@@ -5,7 +5,7 @@ export default function ChampionsLeague({ campaigns }: { campaigns: any[] }) {
     <section className="mb-12">
       <div className="flex items-center gap-3 mb-4">
         <span className="text-3xl">🏆</span>
-        <h2 className="text-2xl font-bold">ŞAMPİYONLAR LİGİ</h2>
+        <h2 className="text-2xl font-bold">İNDİRİMİN ŞAMPİYONLAR LİGİ</h2>
         <span className="bg-yellow-500 text-white text-xs px-3 py-1 rounded-full">TKS Skoru</span>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">

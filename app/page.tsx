@@ -1,4 +1,5 @@
 import HeroSection from '@/components/HeroSection'
+import HighlightCards from '@/components/HighlightCards'
 import CategorySection from '@/components/CategorySection'
 import BulkDealSection from '@/components/BulkDealSection'
 import ChampionsLeague from '@/components/ChampionsLeague'
@@ -26,6 +27,7 @@ export default function HomePage() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       <HeroSection campaign={topOffer} />
+      <HighlightCards />
       <CategoryFilter categories={categories} />
       <CategorySection campaigns={campaigns} categories={categories} />
       <BulkDealSection campaigns={bulkDeals} />
