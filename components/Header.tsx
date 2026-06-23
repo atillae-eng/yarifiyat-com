@@ -10,9 +10,11 @@ export default function Header() {
             <Image
               src="/images/yarifiyat-logo.svg"
               alt="YARİFİYAT"
-              fill
+              width={56}
+              height={56}
               className="object-contain transition-transform group-hover:scale-105"
               priority
+              unoptimized
             />
           </div>
           <div className="flex flex-col leading-tight">
