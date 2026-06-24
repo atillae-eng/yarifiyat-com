@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "yarifiyat-com",
   "version": "1.0.0",
   "private": true,
@@ -9,10 +9,17 @@
     "vercel-build": "next build"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
     "next": "^15.5.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tailwindcss": "^4.0.0",
-    "@tailwindcss/postcss": "^4.0.0"
+    "tailwindcss": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.5.1",
+    "postcss": "^8.5.15"
   }
 }
